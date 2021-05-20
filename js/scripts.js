@@ -31,11 +31,57 @@ numbers.forEach((number) => {
         } else if (e.target.innerText === '.' && dot) {
             return;
         }
-        display2JS += e.target.innerText;
-        display2.innerText = display2JS;
-        
+
+        // avoid more than 14 characters on the screen.
+        if(display2JS.length < 14) {
+            display2JS += e.target.innerText;
+            display2.innerText = display2JS;
+        }
+        e.preventDefault();   
     }); 
 });
+
+operators.forEach(operator => {
+    operator.addEventListener('click', (e) => {
+        if(!display2JS) return;
+        dot = false;
+
+        let typeOperation = e.target.innerText;
+
+        if(display1JS && display2JS && lastOp) {
+            mathOp();
+        } else {
+            result = parseFloat(display2JS)
+        }
+        clearDisplays(typeOperation);
+        console.log(result);
+    });
+});
+
+// operaciones matemáticas - math operations
+function mathOp() {
+    CALCULATIONS = {
+        '/': result = parseFloat(result) / parseFloat(display2JS),
+        '*': result = parseFloat(result) * parseFloat(display2JS),
+        '-': result = parseFloat(result) - parseFloat(display2JS),
+        '+': result = parseFloat(result) + parseFloat(display2JS)
+    }
+    CALCULATIONS[lastOp];
+};
+
+// mostramos y borramos números en pantalla - displays and deletes numbers on the screen
+const clearDisplays = (nam = '') => {
+    display1JS += display2JS+ ' ' + nam + ' ';
+    display1.innerText = display1JS;
+    display2.innerText = display2JS;
+    display2JS = '';
+}
+
+// boton igual - equal button
+
+
+
+
 
 
 
