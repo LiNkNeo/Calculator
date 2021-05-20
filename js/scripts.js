@@ -54,19 +54,33 @@ operators.forEach(operator => {
             result = parseFloat(display2JS)
         }
         clearDisplays(typeOperation);
+        lastOp = typeOperation;
         console.log(result);
     });
 });
 
 // operaciones matemáticas - math operations
 function mathOp() {
-    CALCULATIONS = {
-        '/': result = parseFloat(result) / parseFloat(display2JS),
-        '*': result = parseFloat(result) * parseFloat(display2JS),
-        '-': result = parseFloat(result) - parseFloat(display2JS),
-        '+': result = parseFloat(result) + parseFloat(display2JS)
+    switch (lastOp) {
+        case '+':
+            result = parseFloat(result) + parseFloat(display2JS);
+            break;
+
+        case '-':
+            result = parseFloat(result) - parseFloat(display2JS);
+            break;
+
+        case '/':
+            result = parseFloat(result) / parseFloat(display2JS);
+            break;
+
+        case '*':
+            result = parseFloat(result) * parseFloat(display2JS);
+            break;
+
+        default:
+            break;
     }
-    CALCULATIONS[lastOp];
 };
 
 // mostramos y borramos números en pantalla - displays and deletes numbers on the screen
@@ -78,7 +92,16 @@ const clearDisplays = (nam = '') => {
 }
 
 // boton igual - equal button
-
+equal.addEventListener('click', () => {
+    if(!display1JS || !display2JS) return;
+    dot = false;
+    mathOp();
+    clearDisplays();
+    display2.innerText = result;
+    
+    display2JS = result;
+    display1JS = '';
+})
 
 
 

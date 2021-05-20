@@ -37,7 +37,7 @@ body {
 
 .pantalla {
     background-color: var(--colorPantalla);
-    padding: 10px;
+    padding: 15px;
     width: 100%;
     border-bottom: 2px solid #747400;
     text-align: right;  
@@ -50,7 +50,7 @@ body {
     opacity: 0.3;
 }
 .pantalla__2 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .botones {
