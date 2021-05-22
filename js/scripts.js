@@ -33,7 +33,7 @@ numbers.forEach((number) => {
         }
 
         // avoid more than 14 characters on the screen.
-        if(display2JS.length < 14) {
+        if(display2JS.length < 17) {
             display2JS += e.target.innerText;
             display2.innerText = display2JS;
         }
@@ -60,7 +60,7 @@ operators.forEach(operator => {
 });
 
 // operaciones matemáticas - math operations
-function mathOp() {
+const mathOp = () => {
     switch (lastOp) {
         case '+':
             result = parseFloat(result) + parseFloat(display2JS);
@@ -101,6 +101,13 @@ equal.addEventListener('click', () => {
     
     display2JS = result;
     display1JS = '';
+});
+
+// button square root
+squareRoot.addEventListener('click', () => {
+    if(!display2JS) return;
+    display2JS = Math.sqrt(display2JS) //resolver raíz cuadrada.
+    display2.innerText = display2JS; //mostrar en pantalla resultado
 })
 
 
