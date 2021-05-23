@@ -64,6 +64,7 @@ const mathOp = () => {
     switch (lastOp) {
         case '+':
             result = parseFloat(result) + parseFloat(display2JS);
+            
             break;
 
         case '-':
@@ -87,7 +88,7 @@ const mathOp = () => {
 const clearDisplays = (nam = '') => {
     display1JS += display2JS+ ' ' + nam + ' ';
     display1.innerText = display1JS;
-    display2.innerText = display2JS;
+    display2.innerText = result;
     display2JS = '';
 }
 
@@ -106,8 +107,8 @@ equal.addEventListener('click', () => {
 // button square root
 squareRoot.addEventListener('click', () => {
     if(!display2JS) return;
-    display2JS = Math.sqrt(display2JS) //resolver raíz cuadrada.
-    display2.innerText = display2JS; //mostrar en pantalla resultado
+    display2JS = Math.sqrt(display2JS) 
+    display2.innerText = display2JS; 
 })
 
 
