@@ -107,8 +107,17 @@ equal.addEventListener('click', () => {
 // button square root
 squareRoot.addEventListener('click', () => {
     if(!display2JS) return;
-    display2JS = Math.sqrt(display2JS) 
+    display2JS = Math.sqrt(display2JS);
     display2.innerText = display2JS; 
+    display1.innerText = '√';
+});
+
+// buton percent
+percent.addEventListener('click', () => {
+    if(!display2JS) return;
+    display2JS = display2JS / 100;
+    display2.innerText = display2JS
+    display1.innerText = '%';
 })
 
 
