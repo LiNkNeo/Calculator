@@ -108,8 +108,13 @@ equal.addEventListener('click', () => {
 squareRoot.addEventListener('click', () => {
     if(!display2JS) return;
     display2JS = Math.sqrt(display2JS);
-    display2.innerText = display2JS; 
-    display1.innerText = '√';
+    if(isNaN(display2JS) === true) {
+        display2.innerText = 'Entrada no válida';
+        display1.innerText = '√';
+    } else {
+        display2.innerText = display2JS
+        display1.innerText = '√';
+    }
 });
 
 // buton percent
@@ -118,6 +123,22 @@ percent.addEventListener('click', () => {
     display2JS = display2JS / 100;
     display2.innerText = display2JS
     display1.innerText = '%';
+});
+
+// button opposite
+opposite.addEventListener('click', () => {
+    if(!display2JS) return;
+    opp = display2JS;
+    opp = -opp;
+    display2JS = opp;
+    display2.innerText = display2JS;
+});
+
+// button inverse
+reverse.addEventListener('click', () => {
+    if(!display2JS) return;
+    display2JS = 1 / display2JS
+    display2.innerText = display2JS
 })
 
 
