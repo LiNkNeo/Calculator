@@ -42,15 +42,17 @@ body {
     border-bottom: 2px solid #747400;
     text-align: right;  
     height: 8rem;
-    
 }
 .pantalla__1 {
     font-size: 15px;
     padding-right: 5px;
     opacity: 0.4;
+    user-select: none;
+    height: 17px;
 }
 .pantalla__2 {
     font-size: 3rem;
+    height: 2px;
 }
 
 .botones {

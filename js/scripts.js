@@ -139,9 +139,37 @@ reverse.addEventListener('click', () => {
     if(!display2JS) return;
     display2JS = 1 / display2JS
     display2.innerText = display2JS
-})
+});
 
+// button back
+back.addEventListener('click', backFunction);
 
+// button erase
+erase.addEventListener('click', () => {
+    display2.innerText = '';
+    display2JS = '';
+    if(dot === true) dot = false;
+});
+
+// button erase all
+eraseAll.addEventListener('click', () => {
+    display1.innerText = "";
+    display2.innerText = "";
+    display1JS = "";
+    display2JS = "";
+    if(dot === true) dot = false;
+ 
+});
+
+// function button back
+function backFunction() {
+    chaDisplay = display2JS.length;
+    lastCha = display2JS.substring(chaDisplay-1, chaDisplay);
+    display2JS = display2JS.substring(0, chaDisplay-1);
+    if(lastCha === '.') dot = false;
+    if(display2JS === '') display2JS = '';
+    display2.innerText = display2JS;
+};
 
 
 
