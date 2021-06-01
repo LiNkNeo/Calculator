@@ -28,7 +28,7 @@ body {
 }
 
 .calculadora {
-    width: 90%;
+    width: 80%;
     max-width: 400px;
     border: 2px solid #747400;
     border-radius: 4px;  
@@ -49,10 +49,12 @@ body {
     opacity: 0.4;
     user-select: none;
     height: 17px;
+    overflow: hidden;
 }
 .pantalla__2 {
     font-size: 3rem;
-    height: 2px;
+    height: 30px;
+    overflow: hidden;
 }
 
 .botones {
@@ -60,7 +62,7 @@ body {
     display: grid;
     /* grid-template-columns: repeat(5, 1fr); */
     grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-    gap: 3px; 
+    gap: 9px; 
     background-color: var(--colorBotones);
 }
 .boton-calc {
@@ -68,12 +70,13 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--colorBotones);
-    border: 1px solid var(--colorNumTeclas);
+    border: 2px solid var(--colorccar);
     /* padding: 2rem; */
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     border-radius: 5px;
-    height: 80px;
+    height: 70px;
     width: 100%;    
+    overflow: hidden;
 }
 .boton-calc:hover {
     cursor: pointer;
