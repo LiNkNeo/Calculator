@@ -41,20 +41,36 @@ body {
     width: 100%;
     border-bottom: 2px solid #747400;
     text-align: right;  
-    height: 8rem;
+    height: 6.9rem;
+}
+@media (min-width: 480px) {
+    .pantalla {
+        height: 8rem;
+    }
 }
 .pantalla__1 {
-    font-size: 15px;
-    padding-right: 5px;
+    font-size: 12px;
+    padding-right: 3px;
     opacity: 0.4;
     user-select: none;
     height: 17px;
     overflow: hidden;
 }
+@media (min-width: 480px) {
+    .pantalla__1 {
+        font-size: 15px;
+        padding-right: 5px;
+    }
+}
 .pantalla__2 {
-    font-size: 3rem;
+    font-size: 2rem;
     height: 30px;
     overflow: hidden;
+}
+@media (min-width: 480px) {
+    .pantalla__2 {
+        font-size: 3rem;
+    }
 }
 
 .botones {
