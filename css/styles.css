@@ -42,6 +42,7 @@ body {
     border-bottom: 2px solid #747400;
     text-align: right;  
     height: 6.9rem;
+    white-space: nowrap;
 }
 @media (min-width: 480px) {
     .pantalla {
